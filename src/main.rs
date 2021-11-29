@@ -27,7 +27,7 @@ fn color_replace(img_location: &str, final_loc: &str, color: &str) {
             let mut pixel = img.get_pixel(x,y); 
             if pixel != transparent {
                 pixel = new_col;
-                println!("({},{}), {:?}", x, y,pixel);
+                //println!("({},{}), {:?}", x, y,pixel);
             }
             colored_img.put_pixel(x, y, pixel);
         }
