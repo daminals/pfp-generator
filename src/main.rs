@@ -2,6 +2,8 @@ extern crate image;
 use crate::image::Pixel;
 use image::Rgba;
 use std::str;
+use std::any::type_name;
+use std::collections::HashMap;
 use image::{GenericImage, GenericImageView, ImageBuffer, RgbaImage};
 
 fn main() {
@@ -9,12 +11,12 @@ fn main() {
     //let mut img: RgbImage = ImageBuffer::new(512, 512);
     //let mut img = ImageReader::open("static/head-shape/square.png").unwrap();
     //img.save("test.png").unwrap();
-    color_replace("static/head/square.png", "output/head.png", "blue");
+    color_replace("static/head/square.png", "output/head.png", "red");
 }
 
 fn color_replace(img_location: &str, final_loc: &str, color: &str) {
     // add a hashmap for colors here
-    let new_col = Rgba([0,0,255,255]); // new col will equal the color corresponding to the hashmap
+    let new_col = return_color(color); // new col will equal the color corresponding to the hashmap
 
     let img = image::open(img_location).unwrap();
     let img_dim = img.dimensions(); // the dimensions of the image lol
@@ -32,4 +34,22 @@ fn color_replace(img_location: &str, final_loc: &str, color: &str) {
         }
     }
     colored_img.save(final_loc);
+}
+
+fn return_color(new_col: &str)-> image::Rgba<u8> {
+    let mut color_hm = HashMap::new();
+    color_hm.insert("blue",Rgba([0,0,255,255]));
+    color_hm.insert("red",Rgba([255,0,0,255]));
+    color_hm.insert("green",Rgba([0,255,0,255]));
+    color_hm.insert("white",Rgba([255,255,255,255]));
+    color_hm.insert("yellow",Rgba([255,255,0,255]));
+    color_hm.insert("orange",Rgba([255,128,0,255]));
+    color_hm.insert("purple",Rgba([204,0,204,255]));
+    color_hm.insert("pink",Rgba([255,51,153,255]));
+
+    if color_hm.contains_key(new_col) {
+        return color_hm[new_col]
+    } else {
+        panic!("Color does not exist")
+    }
 }
