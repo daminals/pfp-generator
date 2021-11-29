@@ -2,7 +2,6 @@ extern crate image;
 use crate::image::Pixel;
 use image::Rgba;
 use std::str;
-use std::any::type_name;
 use std::collections::HashMap;
 use image::{GenericImage, GenericImageView, ImageBuffer, RgbaImage};
 
