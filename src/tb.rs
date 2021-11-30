@@ -6,39 +6,9 @@ pub struct TwoColTbStruct {
     name: &'static str,
 }
 
-pub fn tb_print() {    
-    #[derive(Tabled)]
-    struct Language {
-        name: &'static str,
-        designed_by: &'static str,
-        invented_year: usize,
-    }
-    
-    let languages = vec![
-        Language{
-            name: "C",
-            designed_by: "Dennis Ritchie",
-            invented_year: 1972
-        },
-        Language{
-            name: "Rust",
-            designed_by: "Graydon Hoare",
-            invented_year: 2010
-        },
-        Language{
-            name: "Go",
-            designed_by: "Rob Pike",
-            invented_year: 2009
-        },
-    ];
-    
-    let table = Table::new(languages).to_string();
-    println!("{}", table);
-}
-
 pub fn two_col_tb_fn(table_array: Vec<TwoColTbStruct>) {
     let table = Table::new(table_array).to_string();
-    println!("{}", table);
+    print!("{}", table);
 }
 
 pub fn color_print() {
