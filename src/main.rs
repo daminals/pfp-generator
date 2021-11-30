@@ -1,16 +1,18 @@
 extern crate image;
 //use crate::image::Pixel;
 use image::Rgba;
-use std::str;
+use std::{str, io};
 use std::collections::HashMap;
 use image::{GenericImageView, ImageBuffer, RgbaImage};
 
 fn main() {
-    println!("Rust Profile Picture Generator");
+    println!("Rust Profile Picture Generator\n\n");
     //let mut img: RgbImage = ImageBuffer::new(512, 512);
     //let mut img = ImageReader::open("static/head-shape/square.png").unwrap();
     //img.save("test.png").unwrap();
-    color_replace("static/head/square.png", "output/head.png", "red");
+    println!("Color of head: ");
+    let user_v = return_user_input();
+    color_replace("static/head/square.png", "output/head.png",&user_v);
 }
 
 fn color_replace(img_location: &str, final_loc: &str, color: &str) {
@@ -38,6 +40,15 @@ fn color_replace(img_location: &str, final_loc: &str, color: &str) {
         Ok(_) => println!("Successfully generated image"),
         Err(e) => println!("Failed to generate image. Error code: {:?}",e),
     }
+}
+
+fn return_user_input() -> String {
+    let mut input_output = String::new();
+    io::stdin()
+    .read_line(&mut input_output)
+    .expect("Failed to read line");
+    
+    input_output.trim().to_string()
 }
 
 fn return_color(new_col: &str)-> image::Rgba<u8> {
