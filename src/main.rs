@@ -11,7 +11,7 @@ fn main() {
     //let mut img: RgbImage = ImageBuffer::new(512, 512);
     //let mut img = ImageReader::open("static/head-shape/square.png").unwrap();
     //img.save("test.png").unwrap();
-    tb::tb_print();
+    tb::color_print();
     println!("Color of head: ");
     let user_v = return_user_input();
     color_replace("static/head/square.png", "output/head.png",&user_v);

@@ -1,5 +1,6 @@
 use tabled::{Tabled, Table};
 
+#[derive(Tabled)]
 pub struct TwoColTbStruct {
     index: usize,
     name: &'static str,
@@ -36,7 +37,6 @@ pub fn tb_print() {
 }
 
 pub fn two_col_tb_fn(table_array: Vec<TwoColTbStruct>) {
-    #[derive(Tabled)]
     let table = Table::new(table_array).to_string();
     println!("{}", table);
 }
