@@ -1,5 +1,3 @@
-extern crate image;
-//use crate::image::Pixel;
 use image::Rgba;
 use std::{str, io};
 use std::collections::HashMap;

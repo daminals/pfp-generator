@@ -1,4 +1,4 @@
-use tabled::{Tabled, Table, Modify, Row, Format};
+use tabled::{Tabled, Table};
 
 #[derive(Tabled)]
 struct TwoColTbStruct {
