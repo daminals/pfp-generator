@@ -2,10 +2,11 @@ use image::Rgba;
 use std::{str, io};
 use std::collections::HashMap;
 use image::{GenericImageView, ImageBuffer, RgbaImage};
+use colored::{Colorize};
 mod tb; // table.rs file
 
 fn main() {
-    println!("Rust Profile Picture Generator\n\n");
+    println!("{}\n\n", "Rust Profile Picture Generator".magenta().underline().bold());
     tb::color_print();
     println!("Color of head: ");
     // what col user wants?
