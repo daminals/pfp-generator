@@ -1,4 +1,4 @@
-use tabled::{Tabled, Table};
+use tabled::{Tabled, Table, Modify, Row, Format};
 
 #[derive(Tabled)]
 struct TwoColTbStruct {
@@ -6,9 +6,9 @@ struct TwoColTbStruct {
     name: &'static str,
 }
 
-fn two_col_tb_fn(table_array: Vec<TwoColTbStruct>) {
-    let table = Table::new(table_array).to_string();
-    print!("{}", table);
+fn print_col_fn(table_array: Vec<TwoColTbStruct>) {
+    let table = Table::new(table_array);
+    print!("{}", table.to_string());
 }
 
 pub fn color_print() {
@@ -46,5 +46,5 @@ pub fn color_print() {
             name: "pink",
         },
     ];
-    two_col_tb_fn(two_col_tb_arr);
+    print_col_fn(two_col_tb_arr);
 }
