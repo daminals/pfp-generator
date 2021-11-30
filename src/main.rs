@@ -60,7 +60,16 @@ fn return_color(new_col: &str)-> image::Rgba<u8> {
         ("yellow",Rgba([255,255,0,255])),
         ("orange",Rgba([255,128,0,255])),
         ("purple",Rgba([204,0,204,255])),
-        ("pink",Rgba([255,51,153,255]))
+        ("pink",Rgba([255,51,153,255])),
+        // colors should be accessible by index also:
+        ("0", Rgba([0,0,255,255])),
+        ("1",Rgba([255,0,0,255])),
+        ("2",Rgba([0,255,0,255])),
+        ("3",Rgba([255,255,255,255])),
+        ("4",Rgba([255,255,0,255])),
+        ("5",Rgba([255,128,0,255])),
+        ("6",Rgba([204,0,204,255])),
+        ("7",Rgba([255,51,153,255]))
     ]);
 
     if color_hm.contains_key(new_col) {
