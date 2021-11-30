@@ -6,12 +6,11 @@ mod tb; // table.rs file
 
 fn main() {
     println!("Rust Profile Picture Generator\n\n");
-    //let mut img: RgbImage = ImageBuffer::new(512, 512);
-    //let mut img = ImageReader::open("static/head-shape/square.png").unwrap();
-    //img.save("test.png").unwrap();
     tb::color_print();
     println!("Color of head: ");
+    // what col user wants?
     let user_v = return_user_input();
+    // replace the color with the desired color
     color_replace("static/head/square.png", "output/head.png",&user_v);
 }
 
