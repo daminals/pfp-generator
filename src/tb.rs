@@ -1,12 +1,12 @@
 use tabled::{Tabled, Table};
 
 #[derive(Tabled)]
-pub struct TwoColTbStruct {
+struct TwoColTbStruct {
     index: usize,
     name: &'static str,
 }
 
-pub fn two_col_tb_fn(table_array: Vec<TwoColTbStruct>) {
+fn two_col_tb_fn(table_array: Vec<TwoColTbStruct>) {
     let table = Table::new(table_array).to_string();
     print!("{}", table);
 }
