@@ -9,14 +9,14 @@ fn main() {
     println!("{}\n\n", "Rust Profile Picture Generator".magenta().underline().bold());
 
     tb::head_shape_print();
-    println!("Head shape: ");
+    println!("Head shape: "); // let the user select the head shape
     let head_shape = return_user_input();
-    let head_shape = return_head_shape(&head_shape[..]);
+    let head_shape = return_head_shape(&head_shape[..]); // select the path of shape
     println!("\n");
 
     tb::color_print();
     println!("Color of head: ");
-    // what col user wants?
+    // what color user wants?
     let user_v = return_user_input();
     // replace the color with the desired color
     color_replace(head_shape, "output/head.png",&user_v);
