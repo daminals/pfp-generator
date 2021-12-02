@@ -10,14 +10,16 @@ fn main() {
 
     tb::head_shape_print();
     println!("Head shape: ");
-    let user_v = return_user_input(); 
+    let head_shape = return_user_input();
+    let head_shape = return_head_shape(&head_shape[..]);
+    println!("\n");
 
     tb::color_print();
     println!("Color of head: ");
     // what col user wants?
     let user_v = return_user_input();
     // replace the color with the desired color
-    color_replace("static/head/square.png", "output/head.png",&user_v);
+    color_replace(head_shape, "output/head.png",&user_v);
 }
 
 fn color_replace(img_location: &str, final_loc: &str, color: &str) {
@@ -83,14 +85,25 @@ fn return_color(new_col: &str)-> image::Rgba<u8> {
         panic!("Color does not exist")
     }
 }
-fn return_head_shape() {
+fn return_head_shape(head_shape: &str) -> &str {
     let head_hm = HashMap::from([
         ("square", "static/head/square.png"),
         ("circle","static/head/circle.png"),
         ("triangle1","static/head/triangle1.png"),
         ("triangle2","static/head/triangle2.png"),
         ("octogon", "static/head/octogon.png"),
-        ("star", "static/head/star.png")
+        ("star", "static/head/star.png"),
+        // indexes should be included as well
+        ("0", "static/head/square.png"),
+        ("1","static/head/circle.png"),
+        ("2","static/head/triangle1.png"),
+        ("3","static/head/triangle2.png"),
+        ("4", "static/head/octogon.png"),
+        ("5", "static/head/star.png")
     ]);
-
+    if head_hm.contains_key(head_shape) {
+        return head_hm[head_shape]
+    } else {
+        panic!("Color does not exist")
+    }
 }
