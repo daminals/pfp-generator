@@ -7,7 +7,10 @@ mod tb; // table.rs file
 
 fn main() {
     println!("{}\n\n", "Rust Profile Picture Generator".magenta().underline().bold());
+    head_create();
+}
 
+fn head_create() {
     tb::head_shape_print();
     println!("Head shape: "); // let the user select the head shape
     let head_shape = return_user_input();
@@ -63,7 +66,7 @@ fn return_color(new_col: &str)-> image::Rgba<u8> {
         ("blue", Rgba([0,0,255,255])),
         ("red",Rgba([255,0,0,255])),
         ("green",Rgba([0,255,0,255])),
-        ("white",Rgba([255,255,255,255])),
+        ("white",Rgba([255,255,255,255])), // TODO: if white don't run col change func for speed purposes
         ("yellow",Rgba([255,255,0,255])),
         ("orange",Rgba([255,128,0,255])),
         ("purple",Rgba([204,0,204,255])),
@@ -72,11 +75,11 @@ fn return_color(new_col: &str)-> image::Rgba<u8> {
         ("0", Rgba([0,0,255,255])),
         ("1",Rgba([255,0,0,255])),
         ("2",Rgba([0,255,0,255])),
-        ("3",Rgba([255,255,255,255])),
+        ("3",Rgba([255,51,153,255])),
         ("4",Rgba([255,255,0,255])),
         ("5",Rgba([255,128,0,255])),
         ("6",Rgba([204,0,204,255])),
-        ("7",Rgba([255,51,153,255]))
+        ("7",Rgba([255,255,255,255]))
     ]);
 
     if color_hm.contains_key(new_col) {

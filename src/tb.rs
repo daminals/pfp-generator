@@ -27,7 +27,7 @@ pub fn color_print() {
         },
         TwoColTbStruct{
             index: 3,
-            name: "white \u{001b}[0m"
+            name: "\u{001b}[38;5;199m pink \u{001b}[0m"
         },
         TwoColTbStruct{
             index: 4,
@@ -43,7 +43,7 @@ pub fn color_print() {
         },
         TwoColTbStruct{
             index: 7,
-            name: "\u{001b}[38;5;199m pink \u{001b}[0m",
+            name: "white \u{001b}[0m",
         },
     ];
     print_col_fn(two_col_tb_arr);
