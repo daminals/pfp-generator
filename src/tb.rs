@@ -48,3 +48,33 @@ pub fn color_print() {
     ];
     print_col_fn(two_col_tb_arr);
 }
+
+pub fn head_shape_print() {
+    let two_col_tb_arr = vec![
+        TwoColTbStruct{
+            index: 0,
+            name: "Square"
+        },
+        TwoColTbStruct{
+            index: 1,
+            name: "Circle" 
+        },
+        TwoColTbStruct{
+            index: 2,
+            name: "Triangle1" 
+        },
+        TwoColTbStruct{
+            index: 3,
+            name: "Triangle2" 
+        },
+        TwoColTbStruct{
+            index: 4,
+            name: "Octogon" 
+        },        
+        TwoColTbStruct{
+            index: 5,
+            name: "Star" 
+        },
+    ];
+    print_col_fn(two_col_tb_arr);
+}

@@ -7,6 +7,11 @@ mod tb; // table.rs file
 
 fn main() {
     println!("{}\n\n", "Rust Profile Picture Generator".magenta().underline().bold());
+
+    tb::head_shape_print();
+    println!("Head shape: ");
+    let user_v = return_user_input(); 
+
     tb::color_print();
     println!("Color of head: ");
     // what col user wants?
@@ -77,4 +82,15 @@ fn return_color(new_col: &str)-> image::Rgba<u8> {
     } else {
         panic!("Color does not exist")
     }
+}
+fn return_head_shape() {
+    let head_hm = HashMap::from([
+        ("square", "static/head/square.png"),
+        ("circle","static/head/circle.png"),
+        ("triangle1","static/head/triangle1.png"),
+        ("triangle2","static/head/triangle2.png"),
+        ("octogon", "static/head/octogon.png"),
+        ("star", "static/head/star.png")
+    ]);
+
 }
