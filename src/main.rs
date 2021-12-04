@@ -94,14 +94,14 @@ fn return_head_shape(head_shape: &str) -> &str {
         ("circle","static/head/circle.png"),
         ("triangle1","static/head/triangle1.png"),
         ("triangle2","static/head/triangle2.png"),
-        ("octogon", "static/head/octogon.png"),
+        ("octagon", "static/head/octagon.png"),
         ("star", "static/head/star.png"),
         // indexes should be included as well
         ("0", "static/head/square.png"),
         ("1","static/head/circle.png"),
         ("2","static/head/triangle1.png"),
         ("3","static/head/triangle2.png"),
-        ("4", "static/head/octogon.png"),
+        ("4", "static/head/octagon.png"),
         ("5", "static/head/star.png")
     ]);
     if head_hm.contains_key(head_shape) {
