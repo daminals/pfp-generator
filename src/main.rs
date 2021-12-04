@@ -107,6 +107,6 @@ fn return_head_shape(head_shape: &str) -> &str {
     if head_hm.contains_key(head_shape) {
         return head_hm[head_shape]
     } else {
-        panic!("Color does not exist")
+        panic!("Head shape does not exist")
     }
 }
