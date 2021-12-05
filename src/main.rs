@@ -3,6 +3,9 @@ use std::{str, io};
 use std::collections::HashMap;
 use image::{GenericImageView, ImageBuffer, RgbaImage};
 use colored::{Colorize};
+use threadpool::ThreadPool;
+use std::thread;
+use std::time::Duration;
 mod tb; // table.rs file
 
 fn main() {
@@ -11,6 +14,7 @@ fn main() {
 }
 
 fn head_create() {
+    let pool = ThreadPool::new(4);
     tb::head_shape_print();
     println!("Head shape: "); // let the user select the head shape
     let head_shape = return_user_input();
@@ -22,7 +26,7 @@ fn head_create() {
     // what color user wants?
     let user_v = return_user_input();
     // replace the color with the desired color
-    color_replace(head_shape, "output/head.png",&user_v);
+    color_replace(head_shape, "output/head.png",&user_v) // want to throw color replace in a thread but something about headshape borrowed var not living long enough
 }
 
 fn color_replace(img_location: &str, final_loc: &str, color: &str) {

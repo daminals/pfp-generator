@@ -7,5 +7,6 @@ edition = "2021"
 
 [dependencies]
 image = "0.23.14"
+threadpool = "1.0"
 tabled = { version = "0.3.0", features = ["color"] }
 colored = "2"
