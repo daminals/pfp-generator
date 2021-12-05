@@ -4,8 +4,6 @@ use std::collections::HashMap;
 use image::{GenericImageView, ImageBuffer, RgbaImage};
 use colored::{Colorize};
 use threadpool::ThreadPool;
-use std::thread;
-use std::time::Duration;
 mod tb; // table.rs file
 
 fn main() {
@@ -14,7 +12,7 @@ fn main() {
 }
 
 fn head_create() {
-    let pool = ThreadPool::new(4);
+    let pool = ThreadPool::new(10);
     tb::head_shape_print();
     println!("Head shape: "); // let the user select the head shape
     let head_shape = return_user_input();
