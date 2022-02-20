@@ -24,6 +24,9 @@ fn head_create() {
     // what color user wants?
     let user_v = return_user_input();
     // replace the color with the desired color
+    pool.execute(|| {
+        // color_replace(head_shape, "output/head.png",&user_v)  // head_shape dropped prematurely
+    });
     color_replace(head_shape, "output/head.png",&user_v) // want to throw color replace in a thread but something about headshape borrowed var not living long enough
 }
 
